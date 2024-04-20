@@ -25,22 +25,14 @@ jobs:
     runs-on: 'ubuntu-latest'
     needs:
     - 'check_yaml_consistency'
-    timeout-minutes: 30
+    timeout-minutes: 5
     steps:
     - id: 'step-0'
       name: 'checkout'
-      uses: 'actions/checkout@v3'
+      uses: 'actions/checkout@v4'
     - id: 'step-1'
-      name: 'Set up JDK'
-      uses: 'actions/setup-java@v3'
-      with:
-        java-version: '11'
-        distribution: 'zulu'
-    - id: 'step-2'
-      uses: 'gradle/actions/setup-gradle@v3'
-    - id: 'step-3'
       name: 'Publish to mavenLocal'
       run: './gradlew publishToMavenLocal'
-    - id: 'step-4'
+    - id: 'step-2'
       name: 'execute script'
-      run: '''./kt-67618.main.kts'''
+      run: './kt-67618.main.kts'

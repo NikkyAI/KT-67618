@@ -1,4 +1,5 @@
 import io.ktor.client.*
+import io.ktor.client.call.*
 import io.ktor.client.engine.cio.*
 import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.client.request.*
@@ -20,5 +21,8 @@ private val httpClient = HttpClient(CIO) {
 
 public fun getKtorIo(): String = runBlocking {
     println("returning http client")
-    httpClient.get("https://ktor.io").bodyAsText()
+    httpClient.get("https://ktor.io").let {
+        val content = it.bodyAsText()
+        "${it.status} content: ${content.lines().size} lines"
+    }
 }

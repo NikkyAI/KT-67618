@@ -12,4 +12,3 @@ plugins {
 }
 
 rootProject.name = "KT-67618"
-include(":lib")

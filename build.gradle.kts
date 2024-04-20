@@ -21,14 +21,11 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":lib"))
-}
-
-// Apply a specific Java toolchain to ease working on different environments.
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(11))
-    }
+    implementation(platform("io.ktor:ktor-bom:2.3.10"))
+    implementation("io.ktor:ktor-client-core")
+    implementation("io.ktor:ktor-client-cio")
+    implementation("io.ktor:ktor-client-content-negotiation")
+    implementation("io.ktor:ktor-serialization-kotlinx-json")
 }
 
 kotlin {
