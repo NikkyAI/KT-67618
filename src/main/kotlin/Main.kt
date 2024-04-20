@@ -1,7 +1,7 @@
 public fun doHttpCall() {
-    println("calling load http client")
+    println("calling getKtorIo")
     val content = getKtorIo()
-    println("reponse: $content")
+    println("response: $content")
 }
 
 public fun main() {

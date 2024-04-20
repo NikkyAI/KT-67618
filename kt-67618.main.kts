@@ -2,7 +2,7 @@
 
 @file:Repository("https://repo1.maven.org/maven2/")
 @file:Repository("file://~/.m2/repository/")
-@file:DependsOn("moe.nikky:kt_67618:0.1-SNAPSHOT")
+@file:DependsOn("kt_67618:kt_67618:0.1-SNAPSHOT")
 
 println("hello world")
 

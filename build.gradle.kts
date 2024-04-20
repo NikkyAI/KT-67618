@@ -12,7 +12,7 @@ plugins {
     `maven-publish`
 }
 
-group = "moe.nikky"
+group = "kt_67618"
 version = "0.1-SNAPSHOT"
 
 repositories {
